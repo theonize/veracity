@@ -1,7 +1,8 @@
 $(function() {
 	$('li:has(~ol)').click(function() {
-		$(this).next().toggle();
-		highlightLines();
+		$(this).next().toggle(100, function() {
+			highlightLines();
+		});
 	});
 
 	highlightLines();
@@ -10,5 +11,8 @@ $(function() {
 });
 
 function highlightLines() {
-	$('li:not(:hidden):even').css("background-color", "#efe");
+	$('li')
+	.removeClass('highlight')
+	.filter('li:not(:hidden):even')
+	.addClass('highlight');
 }
