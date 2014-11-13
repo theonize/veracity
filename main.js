@@ -1,10 +1,14 @@
 $(function() {
 	$('li:has(~ol)').click(function() {
-		console.log('click');
 		$(this).next().toggle();
+		highlightLines();
 	});
 
-	$('#logos').children('li:even').css("background-color", "#efe");
+	highlightLines();
 
 	// when a search term is entered highlight the word and it's parent and grandparent
 });
+
+function highlightLines() {
+	$('li:not(:hidden):even').css("background-color", "#efe");
+}

@@ -1,11 +1,13 @@
-var word = {}
+var word = {};
 var html = '';
 var fs = require('fs');
+var book = '';
 
 require('./ESV');
 require('./books');
 
-for (var book in Bible) {
+for (var I in Books){
+	book = Books[I];
 	word[book] = [];
 	for (var chapter in Bible[book]) {
 		word[book][+chapter] = [];
@@ -35,7 +37,8 @@ function chapterText(book) {
 
 	result += '<ol>\n';
 	for (var chapter in word[book]) {
-		result += '<li></li>\n';
+		var C = +chapter + 1
+		result += '<li>' + C + '</li>\n';
 		result += verseText(book, chapter);
 	}
 	result += '</ol>\n';
