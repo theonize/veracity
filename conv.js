@@ -3,6 +3,7 @@ var html = '';
 var fs = require('fs');
 
 require('./ESV');
+require('./books');
 
 for (var book in Bible) {
 	word[book] = [];

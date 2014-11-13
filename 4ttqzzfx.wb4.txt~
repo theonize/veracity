@@ -1,0 +1,23 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	new file:   32px.png
+#	new file:   40px.png
+#	new file:   ESV.js
+#	new file:   conv.js
+#	new file:   index.html
+#	new file:   jquery.js
+#	new file:   jstree.js
+#	new file:   main.js
+#	new file:   throbber.gif
+#	new file:   tree.css
+#	new file:   word.html
+#	new file:   word.js
+#	new file:   word.json
+#
+

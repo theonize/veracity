@@ -1,52 +1,10 @@
 $(function() {
-	$('#logos').jstree({
-		'core' : {
-			'data' : {
-				"url" : "./word.json",
-				"dataType" : "json" // needed only if you do not supply JSON headers
-			}
-		}
+	$('li:has(~ol)').click(function() {
+		console.log('click');
+		$(this).next().toggle();
 	});
+
+	$('#logos').children('li:even').css("background-color", "#efe");
+
+	// when a search term is entered highlight the word and it's parent and grandparent
 });
-
-/*
-$(document).ready(function() {
-	var bookSelect = $('#book');
-	var chapterSelect = $('#chapter');
-	var logos = $('#logos');
-	var verseSelect = $('#verse');
-
-	for (var book in Bible) {
-		bookSelect.append('<option val="' + book + '">' + book + '</option>');
-	}
-
-	bookSelect.change(function() {
-		var book = bookSelect.val();
-
-		for (var chapter in Bible[book]) {
-			chapterSelect.append('<option val="' + chapter + '">' + chapter + '</option>');
-		}
-	});
-
-	chapterSelect.change(function() {
-		var book = bookSelect.val();
-		var chapter = +chapterSelect.val();
-
-		for (var verse in Bible[book][chapter]) {
-			verseSelect.append('<option val="' + verse + '">' + verse + '</option>');
-		}
-	});
-
-	verseSelect.change(function() {
-		var book = bookSelect.val();
-		var chapter = +chapterSelect.val();
-		var verse = verseSelect.val();
-
-		logos.html(Bible[book][chapter][verse]);
-	});
-
-	for (var book in Bible) {
-		$('#logos').append('<ol>' + book + '</ol>');
-	}
-});
-*/
