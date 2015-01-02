@@ -5,11 +5,11 @@ var fs = require('fs');
 
 require('./NASB.js');
 
+list += '<ul id="book_list">';
 logos += '<table>';
-list += '<table cellpadding="5" cellspacing="1">';
 
 for (book in AZ) {
-	list += '<tr class="book_selector" data-book="' + book + '"><td>' + book + '</td></tr>';
+	list += '<li><a class="book_selector" data-book="' + book + '" href="#">' + book + '</a></li>';
 
 	for (chapter in AZ[book]) {
 		verse_cell = '';
@@ -31,9 +31,9 @@ for (book in AZ) {
 	}
 }
 
+list += '</ul>';
 logos += '</table>';
-list += '</table>';
 
-html = '<table><tr><td>' + list + '</td><td>' + logos + '</td></tr></table>';
+html = list + logos;
 
 fs.writeFile("./NASB.html", html);
