@@ -9,6 +9,7 @@ fs.readFile('NASB.txt', function(error, data) {
 
 	for (I in AZ) {
 		line = AZ[I];
+		line = line.substring(0, line.length);
 		L = line.split(' ');
 		book = L[0];
 
@@ -22,6 +23,7 @@ fs.readFile('NASB.txt', function(error, data) {
 
 		if (verse == 1) {
 			if (chapter == 1) logos[book] = [];
+
 			logos[book][chapter] = [];
 		}
 

@@ -4,12 +4,19 @@ $(function() {
 	});
 
 	$('a.book_selector').click(function() {
-console.dir($(this));
 		var this_book = $(this).data('book');
-console.log(this_book);
-		var selector = 'tr[data-book="' + this_book + '"]'
+		var selector = 'tr[data-book="' + this_book + '"]';
 
 		$('tr.book').hide();
-		$(selector).show();
+		$(selector).show(function() {
+			$('#book_list').toggle();
+			$('#book_list_ctrl').html(this_book);
+		});
+	});
+
+	$('td.chapter').click(function() {
+		var verses = $(this).next('td.verses');
+
+		verses.toggle();
 	});
 });
