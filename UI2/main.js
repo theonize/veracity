@@ -8,15 +8,18 @@ $(function() {
 		var selector = 'tr[data-book="' + this_book + '"]';
 
 		$('tr.book').hide();
-		$(selector).show(function() {
-			$('#book_list').toggle();
-			$('#book_list_ctrl').html(this_book);
-		});
+		$(selector).show();
+		$('#book_list').toggle();
+		$('#book_list_ctrl').html(this_book);
 	});
 
 	$('td.chapter').click(function() {
 		var verses = $(this).next('td.verses');
 
 		verses.toggle();
+	});
+
+	$('span.verse').hover(function() {
+		$(this).toggleClass('highlight');
 	});
 });

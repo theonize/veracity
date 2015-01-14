@@ -13,16 +13,16 @@ fs.readFile('NASB.txt', function(error, data) {
 		L = line.split(' ');
 		book = L[0];
 
-		chapter = parseInt(L[1].split(':')[0]);
+		chapter = parseInt(L[1].split(':')[0]) - 1;
 
-		verse = parseInt(L[1].split(':')[1]);
+		verse = parseInt(L[1].split(':')[1]) - 1;
 
 		delete L[0];
 		delete L[1];
-		text = L.join(' ');
+		text = L.join(' ').trim();
 
-		if (verse == 1) {
-			if (chapter == 1) logos[book] = [];
+		if (!verse) {
+			if (!chapter) logos[book] = [];
 
 			logos[book][chapter] = [];
 		}
